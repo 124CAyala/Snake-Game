@@ -1,0 +1,82 @@
+body {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-color: black;
+}
+
+#game-board {
+    background-color: #ccc;
+    width: 100vmin;
+    height: 100vmin;
+    display: grid;
+    grid-template-rows: repeat(21, 1fr);
+    grid-template-columns: repeat(21, 1fr);
+}
+
+.snake {
+    background-color: hsl(130, 100%, 55%);
+    border: .25vmin solid black;
+}
+
+.food {
+    background-color: hsl(0, 100%, 50%);
+    border: .25vmin solid black;
+}
+#overlay {
+  position: fixed;
+  display: block;
+  width: 20%; /* Full width (cover the whole page) */
+  height: 20%; /* Full height (cover the whole page) */
+  top: 5%;
+  left: 78%;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(244, 242, 245, 0.85);
+  z-index: 2;
+  border: 25px;
+}
+.score-board {
+  font-size: 3vw !important;
+  font-family: 'Gajraj One', cursive;
+}
+#overlay2 {
+  position: absolute; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 30%; /* Full width (cover the whole page) */
+  height: 30%; /* Full height (cover the whole page) */
+  top: 25%;
+  left: 35%;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(244, 242, 245, 0.85); /* Black background with opacity */
+  z-index: 3; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+  border-radius: 50px;
+}
+#overlay-text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 2vw;
+  color: black;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+}
+.try-again {
+  font-family: 'Gajraj One', cursive;
+  border: 2px white solid;
+  border-radius: 25px;
+  background-color: green;
+  padding: 15px;
+  color: white !important;
+}
+#result {
+  text-align: center;
+  font-family: 'Gajraj One', cursive;
+  size: 15px;
+  width: 100%;
+}

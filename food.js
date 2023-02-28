@@ -1,23 +1,39 @@
-import { expandSnake, onSnake } from "./snake"
+import { onSnake, expandSnake } from './snake.js'
+import { randomGridPosition } from './grid.js'
 
-
-let food = {x: 10, y: 1}
-const EXPANSION_RATE = 1
+let food = getRandomFoodPosition()
+let foodCount = 0
+var EXPANSION_RATE = 5
 
 export function update() {
-    if (onSnake(food)) {
-        expandSnake(EXPANSION_RATE)
-        food = { x: 20, y:10}
-        }
-    }
+  if (onSnake(food)) {
+    updateFoodCount()
+    expandSnake(EXPANSION_RATE)
+    food = getRandomFoodPosition()
+  }
+}
 
 
 export function draw(gameBoard) {
-    // console.log('draw snake')
+  // console.log('draw snake')
 
-        const foodElement = document.createElement('div')
-        foodElement.style.gridRowStart = food.y
-        foodElement.style.gridColumnStart = food.x
-        foodElement.classList.add('snake');
-        gameBoard.appendChild(foodElement);
+  const foodElement = document.createElement('div')
+  foodElement.style.gridRowStart = food.y
+  foodElement.style.gridColumnStart = food.x
+  foodElement.classList.add('food');
+  gameBoard.appendChild(foodElement);
 }
+
+function getRandomFoodPosition() {
+  let newFoodPosition
+  while (newFoodPosition == null || onSnake(newFoodPosition)) {
+    newFoodPosition = randomGridPosition()
+  }
+  return newFoodPosition
+}
+
+function updateFoodCount() {
+  foodCount++;
+  document.getElementById('overlay-text').innerHTML = 'Score: ' + foodCount;
+}
+
