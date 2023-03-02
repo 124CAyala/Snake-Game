@@ -3,7 +3,7 @@ import { randomGridPosition } from './grid.js'
 
 let food = getRandomFoodPosition()
 let foodCount = 0
-var EXPANSION_RATE = 5
+var EXPANSION_RATE = 3
 
 export function update() {
   if (onSnake(food)) {

@@ -5,11 +5,11 @@ body {
     justify-content: center;
     align-items: center;
     margin: 0;
-    background-color: black;
+    background-color: #003800;
 }
 
 #game-board {
-    background-color: #ccc;
+    background-color: #008a29;
     width: 100vmin;
     height: 100vmin;
     display: grid;
@@ -18,13 +18,14 @@ body {
 }
 
 .snake {
-    background-color: hsl(130, 100%, 55%);
+    background-color: lime;
     border: .25vmin solid black;
+    
 }
 
 .food {
-    background-color: hsl(0, 100%, 50%);
-    border: .25vmin solid black;
+    background-color: red;
+    border: .3vmin solid black;
 }
 #overlay {
   position: fixed;
@@ -79,4 +80,16 @@ body {
   font-family: 'Gajraj One', cursive;
   size: 15px;
   width: 100%;
+}
+.goingUp {
+  rotate: 0deg;
+}
+.goingDown {
+  rotate: 180deg;
+}
+.goingLeft {
+  rotate: 270deg
+}
+.goingRight {
+  rotate: 90deg
 }

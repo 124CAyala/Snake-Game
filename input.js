@@ -6,6 +6,7 @@ window.addEventListener('keydown', e => {
     case 'ArrowUp':
       if (lastInputDiretion.y !== 0) break
       inputDirection = { x: 0, y: -1 }
+      
       break;
     case 'ArrowDown':
       if (lastInputDiretion.y !== 0) break
@@ -19,9 +20,9 @@ window.addEventListener('keydown', e => {
       if (lastInputDiretion.x !== 0) break
       inputDirection = { x: 1, y: 0 }
       break;
-
   }
 })
+
 
 export function getInputDirection() {
   lastInputDiretion = inputDirection
